@@ -12,10 +12,10 @@ https://github.com/Belie06Loryn
 ## Project setup instructions
 To start using this project use the following commands:
 
-git clone https://github.com/Belie06Loryn/Password__Locker.git
-cd Desktop/Password_Lorcker
+* git clone https://github.com/Belie06Loryn/Password__Locker.git
+* cd Desktop/Password_Lorcker
 code . [//]:  (this is if Visual Studio Code is your preferred text editor)
-Ctrl + T
+* Ctrl + T
 ### BDD
 Story: 
 ## Known Bugs

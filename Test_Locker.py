@@ -21,7 +21,20 @@ class Genzura(unittest.TestCase):
         this method test if the user that you have entered has bee saved into database
         """
         self.user.bika_user()
-        self.assertEqual(len(Urufunguzo.user_data),1)    
+        self.assertEqual(len(Urufunguzo.user_data),1) 
+
+    def tearDown(self):
+        Urufunguzo.user_data = []
+
+
+    def test_bika_benshi_user(self):
+        """
+        this method check if we can save more than one users
+        """
+        self.user.bika_user()
+        user_s = Urufunguzo("Brenda","078883078","Mwiza","brenda@gmail.com","1234")
+        user_s.bika_user()
+        self.assertEqual(len(Urufunguzo.user_data),2)       
 
 
 
