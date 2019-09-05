@@ -34,7 +34,29 @@ class Genzura(unittest.TestCase):
         self.user.bika_user()
         user_s = Urufunguzo("Brenda","078883078","Mwiza","brenda@gmail.com","1234")
         user_s.bika_user()
-        self.assertEqual(len(Urufunguzo.user_data),2)       
+        self.assertEqual(len(Urufunguzo.user_data),2)
+
+    def test_shaka_user(self):
+        """
+        this method is for searching any user by name
+        """
+        self.user.bika_user()
+        user_s = Urufunguzo("Brenda","078883078","Mwiza","brenda@gmail.com","1234")
+        user_s.bika_user()
+
+        shaka_user = Urufunguzo.ni_Izina("Brenda") 
+        self.assertEqual(shaka_user.mail,user_s.mail) 
+
+    def test_siba_user(self):
+        """
+        This is for testing if delete function can delete a user
+        """
+        self.user.bika_user()
+        user_s = Urufunguzo("Brenda","078883078","Mwiza","brenda@gmail.com","1234")
+        user_s.bika_user()
+
+        self.user.siba_user()
+        self.assertEqual(len(Urufunguzo.user_data),1)              
 
 
 

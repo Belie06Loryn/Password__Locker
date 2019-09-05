@@ -19,4 +19,19 @@ class Urufunguzo:
         """
         Urufunguzo.user_data.append(self)  
 
+    @classmethod 
+    def ni_Izina(cls,string):
+        """
+        This method will search a user according the name that has been entered to search
+        """
+        for usere in cls.user_data:
+            if usere.name == string:
+                return usere  
+
+    def siba_user(self):
+        """
+        This for deleleting a user
+        """
+        Urufunguzo.user_data.remove(self)             
+
     pass      
