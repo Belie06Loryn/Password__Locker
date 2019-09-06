@@ -1,3 +1,4 @@
+import pyperclip
 class Urufunguzo:
     """
     Creating a class to holds new instances 
@@ -32,6 +33,24 @@ class Urufunguzo:
         """
         This for deleleting a user
         """
-        Urufunguzo.user_data.remove(self)             
+        Urufunguzo.user_data.remove(self)    
+
+
+    @classmethod 
+    def reba_user(cls,string):
+        """
+        This method will check if the user exist
+        """
+        for usere in cls.user_data:
+            if usere.name == string:
+                return True
+        return False
+
+
+    @classmethod
+    def terura_user(cls,string):
+        yabonetse = Urufunguzo.ni_Izina(string)
+        pyperclip.copy(yabonetse.mail)      
+         
 
     pass      

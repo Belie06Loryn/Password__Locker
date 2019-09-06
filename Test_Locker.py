@@ -1,4 +1,5 @@
 import unittest
+import pyperclip
 from Locker import Urufunguzo
 
 class Genzura(unittest.TestCase):
@@ -56,9 +57,29 @@ class Genzura(unittest.TestCase):
         user_s.bika_user()
 
         self.user.siba_user()
-        self.assertEqual(len(Urufunguzo.user_data),1)              
+        self.assertEqual(len(Urufunguzo.user_data),1)          
 
 
+    def test_niba_user(self):
+        """
+        This is for testing if the user exists
+        """
+        self.user.bika_user()
+        user_s = Urufunguzo("Brenda","078883078","Mwiza","brenda@gmail.com","1234")
+        user_s.bika_user()
+
+        arimo = Urufunguzo.reba_user("Aline")
+        self.assertTrue(arimo)             
+        
+
+    def test_terura_user(self):
+        """
+        Test to confirm the copy action
+        """
+        self.user.bika_user()
+        Urufunguzo.terura_user("Aline")
+
+        self.assertEqual(self.user.mail,pyperclip.paste())
 
 
 if __name__ == '__main__':
