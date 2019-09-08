@@ -50,7 +50,15 @@ class Urufunguzo:
     @classmethod
     def terura_user(cls,string):
         yabonetse = Urufunguzo.ni_Izina(string)
-        pyperclip.copy(yabonetse.mail)      
+        pyperclip.copy(yabonetse.mail)    
+
+
+    @classmethod
+    def user_bose(cls):
+        """
+        This for displaying all users
+        """
+        return cls.user_data      
          
 
     pass      
