@@ -198,6 +198,11 @@ def main():
                     else:
                             print("The User Doesn't Copied")
                             print ('\n')
+
+            elif Code == "7":
+                    print("Thank you")
+                    break
+                                            
             elif Code == '6':
                     print("Enter The UserName:")
                     user_na = input()
@@ -205,116 +210,101 @@ def main():
                     user_pa = input()
                     if check_existing_user(user_na) :
                             user_search= search_user(user_na)
+                            if user_search.names == user_na:
+                                if user_search.ibanga == user_pa:
+                                    user_search.search_user(user_na,user_pa)   
+                                    print('User Logged in.')
+                                    print ('\n')
+                    break                                
+
+    
+    while True:
+            print("#"*19)
+            print("1 - Create Credential")
+            print("2 - Display Credential")
+            print("3 - Search Credential")
+            print("4 - Copy Credential")
+            print("5 - Delete Credential")
+            print("6 - Exit")
+            print("#"*19)
+            Tin = input()
+            if Tin == '1':
+                    print("New Account")
+                    print("="*10)
+                    print ("Credential:")
+                    konti = input()
+                    print("UserName:")
+                    username = input()
+                    print("Password:")
+                    password = input()
+                    save_credential(rema_konti(konti,username,password))
+                    print ('\n')
+                    print(f"New User {username} Created")
+                    print ('\n')
+            elif Tin == '2':
+                    if display_credential():
+                            print("="*10)
+                            print("List of Users")
+                            print("="*10)
+                            print('\n')
+                            for user in display_credential():
+                                    print(f"{user.konti}  {user.username} {user.password} ")
+                            print('\n')
+                    else:
+                            print('\n')
+                            print("You dont seem to have any Credential saved yet")
+                            print('\n')
+            elif Tin == '3':
+                    print("Enter The UserName You Want To Search For:")
+                    search = input()
+                    if check_existing_credential(search):
+                            user_search= search_konti(search)
                             print('.' * 20)
-                            print(f"Full Name:{user_search.name}") 
-                            print(f"UserName:{user_search.names}")
-                            print(f"Phone Number:{user_search.fone}")
-                            print(f"Email Address:{user_search.mail}")
+                            print(f"Credential:{user_search.konti}") 
+                            print(f"UserName:{user_search.username}")
+                            print(f"Password:{user_search.password}")
                             print('.' * 20)
                             print ('\n')
-                            if user_search.names == user_na and user_search.ibanga == user_pa:
-                                user_search.login(user_na,user_pa)   
-                                print('User Logged in.')
-                                while True:
-                                        print("#"*19)
-                                        print("1 - Create Credential")
-                                        print("2 - Display Credential")
-                                        print("3 - Search Credential")
-                                        print("4 - Copy Credential")
-                                        print("5 - Delete Credential")
-                                        print("6 - Exit")
-                                        print("#"*19)
-                                        Tin = input()
-                                        if Tin == '1':
-                                                print("New Account")
-                                                print("="*10)
-                                                print ("Credential:")
-                                                konti = input()
-                                                print("UserName:")
-                                                username = input()
-                                                print("Password:")
-                                                password = input()
-                                                save_credential(rema_konti(konti,username,password))
-                                                print ('\n')
-                                                print(f"New User {username} Created")
-                                                print ('\n')
-                                        elif Tin == '2':
-                                                if display_credential():
-                                                        print("="*10)
-                                                        print("List of Users")
-                                                        print("="*10)
-                                                        print('\n')
-                                                        for user in display_credential():
-                                                                print(f"{user.konti}  {user.username} {user.password} ")
-                                                        print('\n')
-                                                else:
-                                                        print('\n')
-                                                        print("You dont seem to have any Credential saved yet")
-                                                        print('\n')
-                                        elif Tin == '3':
-                                                print("Enter The UserName You Want To Search For:")
-                                                search = input()
-                                                if check_existing_credential(search):
-                                                        user_search= search_konti(search)
-                                                        print('.' * 20)
-                                                        print(f"Credential:{user_search.konti}") 
-                                                        print(f"UserName:{user_search.username}")
-                                                        print(f"Password:{user_search.password}")
-                                                        print('.' * 20)
-                                                        print ('\n')
-                                                else:
-                                                        print("The Credential Doesn't Exist")
-                                        elif Tin == '5':
-                                                print('Enter The Name:')
-                                                search = input()
-                                                if check_existing_credential(search):
-                                                        user_search= search_konti(search)
-                                                        print('.' * 20)
-                                                        print(f"Credential:{user_search.konti}") 
-                                                        print(f"UserName:{user_search.username}")
-                                                        print(f"Password:{user_search.password}")
-                                                        print('.' * 20)
-                                                        print ('\n')
-                                                        user_search.delete_konti()
-                                                        print('Credential Deleted')
-                                                else:
-                                                        print("Credential Doesn't Exist")
-                                        elif Tin == '4':
-                                                print('Enter The UserName:')
-                                                search = input()
-                                                if check_existing_credential(search):
-                                                        user_search= search_konti(search)
-                                                        print('.' * 20)
-                                                        print(f"Credential:{user_search.konti}") 
-                                                        print(f"UserName:{user_search.username}")
-                                                        print(f"Password:{user_search.password}")
-                                                        print('.' * 20)
-                                                        print ('\n')
-                                                        user_search.terura_konti(search)
-                                                        print('User Copied.')
-                                                else:
-                                                        print("The User Doesn't Copied")
-                                                        print ('\n')
-                                        elif Code == "6":
-                                                print("Thank you")
-                                                main()
-                                                break
-                                        else:
-                                                print("PLZ!! Choose Number!")
-                                                credentia()
-
-                            
-                                                else:
-                                                        print("You Entered Wrong Password or UserName")
-                                                        print ('\n')
-            elif Code == "7":
+                    else:
+                            print("The Credential Doesn't Exist")
+            elif Tin == '5':
+                    print('Enter The Name:')
+                    search = input()
+                    if check_existing_credential(search):
+                            user_search= search_konti(search)
+                            print('.' * 20)
+                            print(f"Credential:{user_search.konti}") 
+                            print(f"UserName:{user_search.username}")
+                            print(f"Password:{user_search.password}")
+                            print('.' * 20)
+                            print ('\n')
+                            user_search.delete_konti()
+                            print('Credential Deleted')
+                    else:
+                            print("Credential Doesn't Exist")
+            elif Tin == '4':
+                    print('Enter The UserName:')
+                    search = input()
+                    if check_existing_credential(search):
+                            user_search= search_konti(search)
+                            print('.' * 20)
+                            print(f"Credential:{user_search.konti}") 
+                            print(f"UserName:{user_search.username}")
+                            print(f"Password:{user_search.password}")
+                            print('.' * 20)
+                            print ('\n')
+                            user_search.terura_konti(search)
+                            print('User Copied.')
+                    else:
+                            print("The User Doesn't Copied")
+                            print ('\n')
+            elif Tin == "6":
                     print("Thank you")
                     break
             else:
                     print("PLZ!! Choose Number!")
 
-def credentia():
-    
+            
 
 
 if __name__ == '__main__':
