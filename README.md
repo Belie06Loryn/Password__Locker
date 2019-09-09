@@ -1,10 +1,10 @@
-# Password LOcker
-#### , september 5 2019
+# Password Locker
+#### This is for creating accounts, september 5 2019
 #### By MANIRAKORA Alexie
 ### Author
 https://github.com/Belie06Loryn
 ## Description
-
+This application is used to create account,and when you are done you have ability to create different Credentials 
 ## Setup/Installation Requirements
 * GitHub Account
 * Terminal
