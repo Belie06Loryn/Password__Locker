@@ -46,6 +46,12 @@ class Urufunguzo:
                 return True
         return False
 
+    @classmethod
+    def login(cls,user_na,user_pa):
+        for usere in cls.user_data:
+            if usere.names == user_na and usere.ibanga == user_pa:
+                return True
+        return False
 
     @classmethod
     def terura_user(cls,string):

@@ -75,6 +75,16 @@ class Genzura(unittest.TestCase):
         self.assertTrue(arimo)             
         
 
+    def test_login(self):
+
+        self.user.bika_user()
+        user_s = Urufunguzo("Brenda","078883078","Mwiza","brenda@gmail.com","1234")
+        user_s.bika_user()
+
+        arimo = Urufunguzo.login("Alibebe","123")
+        self.assertTrue(arimo)
+
+
     def test_terura_user(self):
         """
         Test to confirm the copy action
