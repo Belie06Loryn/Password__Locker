@@ -18,6 +18,9 @@ code . [//]:  (this is if Visual Studio Code is your preferred text editor)
 * Ctrl + T
 ### BDD
 Story: 
+* First you have to create an account and then Login.
+* On this stage you are able to create Credentials 
+* and Login in one credential
 ## Known Bugs
 No Bugs
 ## Technologies Used
